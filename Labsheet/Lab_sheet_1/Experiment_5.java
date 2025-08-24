@@ -3,24 +3,23 @@ package Lab_sheet_1;
 import java.util.Scanner;
 
 public class Experiment_5 {
-
-    public static void calculategrade(int[] marks) {
+    public void calculategrade(int[] marks) {
         int total = 0;
-        for (int mark : marks) 
+        for (int mark : marks)
             total += mark;
 
         int average = total / marks.length;
 
         String grade;
-        if (average >= 90) 
+        if (average >= 90)
             grade = "A";
-        else if (average >= 75) 
+        else if (average >= 75)
             grade = "B";
-        else if (average >= 60) 
+        else if (average >= 60)
             grade = "C";
-        else if (average >= 40) 
+        else if (average >= 40)
             grade = "D";
-        else 
+        else
             grade = "Fail";
 
         System.out.println("Total: " + total);
@@ -34,18 +33,16 @@ public class Experiment_5 {
         int[] marks = new int[5];
         boolean valid = true;
 
- 
         for (int i = 0; i < 5; i++) {
             marks[i] = z.nextInt();
-            if (marks[i] < 0 || marks[i] > 100) 
+            if (marks[i] < 0 || marks[i] > 100)
                 valid = false;
-            }
-        
+        }
 
-        if (valid) 
-            calculategrade(marks);
-         else 
+        if (valid) {
+            Experiment_5 obj = new Experiment_5();
+            obj.calculategrade(marks);
+        } else
             System.out.println("Invalid, Marks must be between 0 and 100 ");
-        
     }
 }
